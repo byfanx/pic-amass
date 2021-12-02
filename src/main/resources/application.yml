@@ -1,0 +1,42 @@
+server:
+  port: 9000
+#  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    url: jdbc:mysql://104.168.141.141:3306/at_once?characterEncoding=utf-8&serverTimezone=GMT%2B8   # 设置时区为东八区北京时间
+    url: jdbc:mysql://121.41.199.102:3306/picamass?characterEncoding=utf-8&serverTimezone=GMT%2B8   # 设置时区为东八区北京时间
+    username: root
+    password: 123456
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.format_sql: false
+  application:
+    name: photos-service
+
+# 配置静态资源地址
+  servlet:
+    multipart:
+      max-file-size: 55MB
+      max-request-size: 500MB
+
+  # spring默认使用jackson解析包返回json，配置日期的返回方式，
+  jackson:
+    time-zone: GMT+8    # 配置时区，东八区
+    date-format: yyyy-MM-dd HH:mm:ss  # 默认返回时间格式
+
+  resources:
+      static-locations: classpath:/static
+
+# 默认的url地址
+conf:
+  server_path_default: http://127.0.0.1
+
+# 图片上传地址
+#file_path: src/main/resources/static
+file_path: /tmp
+
