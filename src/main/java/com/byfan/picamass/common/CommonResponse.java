@@ -1,18 +1,18 @@
 package com.byfan.picamass.common;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @Author: fby
- * @Description
+ * @Description 自定义状态码
  * @Version 1.0
  * @Date: 2021/11/23 14:21
  */
 public class CommonResponse {
+    // 200 请求成功
     public static final Integer STATUS_OK = 200;
-    // 10X 其它
+    // 1000 其它
     public static final Integer STATUS_JSON_SYNTAX_ERROR = 1000;
     // 1001 未知错误
     public static final Integer UNKNOWN_ERROR = 1001;
